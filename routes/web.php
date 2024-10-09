@@ -23,6 +23,10 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin-logout', [AuthController::class, 'admin_logout'])->name('admin.logout');
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/admin/product/detail/{id}', [ProductController::class,'detail'])->name('product.detail');
+    Route::get('/product/edit/{id}', [ProductController::class,'edit'])->name('product.edit');
+    Route::delete('/product/delete/{id}', [ProductController::class,'delete'])->name('product.delete');
+
 });
 
 // User Route
